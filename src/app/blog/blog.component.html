@@ -1,0 +1,71 @@
+<h2>{{title}}</h2>
+
+<ag-grid-angular style="width: 1000px; height: 500px;"
+                 class="ag-theme-balham"
+                 [rowData]="blogPosts"
+                 [columnDefs]="columnDefs"
+                 [frameworkComponents]="frameworkComponents"
+                 [pagination]="true"
+                 [enableFilter]="true"
+                 [enableSorting]="true"
+                 [context]="context"
+                 (gridReady)="OnGridReady($event)">
+</ag-grid-angular>
+
+<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#blogdetailModal" (click)="createBlog()">Create Blog Post</button>
+<br />
+
+<!-- Create Modal -->
+<div class="modal fade" id="blogdetailModal" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" (click)="goBackToMainPage()">&times;</button>
+        <h4>Create Blog Info</h4>
+      </div>
+      <div class="modal-body">
+        <app-blog-detail [blogPost]="blogPost"></app-blog-detail>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="goBackToMainPage()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Edit Modal -->
+<div class="modal fade" id="blogEditModal" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" (click)="goBackToMainPage()">&times;</button>
+        <h4>Edit Blog Info</h4>
+      </div>
+      <div class="modal-body">
+        <app-blog-detail [blogPost]="blogPost"></app-blog-detail>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="goBackToMainPage()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Delete Modal -->
+<div class="modal fade" id="deleteBlogModal" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" (click)="goBackToMainPage()">&times;</button>
+        <h4>Edit Blog Info</h4>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to delete?</p>
+        <button (click)="deleteBlog()">Yes</button><button (click)="goBackToMainPage()">No</button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="goBackToMainPage()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

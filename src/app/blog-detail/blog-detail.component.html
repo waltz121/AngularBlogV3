@@ -1,0 +1,18 @@
+<h4>{{title}}</h4>
+
+<div class="form-style-9">
+  <ul>
+    <li>
+      <label>Id:  {{blogPost.id}}</label>
+    </li>
+    <li>
+      <input type="text" name="field1" [(ngModel)]="blogPost.title" class="field-style field-full align-none" placeholder="title" />
+    </li>
+    <li>
+      <textarea [(ngModel)]="blogPost.body" name="body" class="field-style" placeholder="body"></textarea>
+    </li>
+    <li>
+      <input type="submit" value="Save" (click)="submit()" />
+    </li>
+  </ul>
+</div>

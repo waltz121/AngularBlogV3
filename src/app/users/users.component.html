@@ -1,0 +1,12 @@
+<h2>{{ title }}</h2>
+
+<ag-grid-angular style="width: 1000px; height: 500px;"
+                 class="ag-theme-balham"
+                 [rowData]="users"
+                 [columnDefs]="columnDefs"
+                 [pagination]="true"
+                 [enableFilter]="true"
+                 [enableSorting]="true"
+                 [context]="context"
+                 (gridReady)="OnGridReady($event)">
+</ag-grid-angular>

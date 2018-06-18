@@ -1,0 +1,20 @@
+<div *ngIf="!(isNotRegistered)">
+  <h1>{{title}}</h1>
+
+  <label>
+    Username:
+    <input [(ngModel)]="loginInfo.userName" placeholder="username" />
+  </label>
+  <label>
+    Password:
+    <input [(ngModel)]="loginInfo.password" placeholder="password" type="password" />
+  </label>
+
+  <button (click)="LogIn()">Submit</button>
+  <a (click)="Register()">Register</a>
+</div>
+
+<div *ngIf="isNotRegistered">
+  <button (click)="ExitRegisterForm()">Exit</button>
+  <app-userRegistration></app-userRegistration>
+</div>
